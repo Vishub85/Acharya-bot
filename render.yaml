@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: acharya-bot
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: GROQ_API_KEY
+        sync: false  # Render will prompt you to input this secret value during setup
+      - key: GROQ_MODEL
+        value: groq-1
+      - key: GROQ_API_URL
+        value: https://api.groq.ai/v1/models/groq-1/infer
