@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acharya Institutes Chatbot</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="light-theme">
+
+    <div class="student-background-overlay"></div>
+
+    <div class="background-watermark">
+        <img src="https://upload.wikimedia.org/wikipedia/en/9/9c/Acharya_Institutes_logo.png" alt="Acharya Branding">
+    </div>
+
+    <div class="chat-wrapper">
+        <header>
+            <div class="logo-container">
+                <img src="/static/acharya_logo.png" alt="Acharya Institutes" class="header-logo" onerror="this.onerror=null;this.src='/static/acharya_logo.svg'">
+                <h2>Acharya Institutes Chatbot</h2>
+            </div>
+            <button id="theme-toggle" onclick="toggleDarkMode()" title="Change Visual Theme">
+                <i class="fas fa-moon"></i>
+            </button>
+        </header>
+
+        <div id="chat-box">
+            <div class="message bot">
+                Hello! Welcome to the Acharya Institutes Chatbot. Ask me about courses, placements, eligibility, or hostels! 😊
+            </div>
+        </div>
+
+        <div class="quick-replies">
+            <button class="quick-btn" onclick="quick('Courses')"><i class="fas fa-graduation-cap"></i> Courses</button>
+            <button class="quick-btn" onclick="quick('Placements')"><i class="fas fa-briefcase"></i> Placements</button>
+            <button class="quick-btn" onclick="quick('Hostel')"><i class="fas fa-hotel"></i> Hostel</button>
+            <button class="quick-btn" onclick="quick('Admissions')"><i class="fas fa-id-card"></i> Admissions</button>
+        </div>
+
+        <div class="input-area">
+            <input 
+                id="msg" 
+                type="text" 
+                autocomplete="off" 
+                placeholder="Type your campus question here..." 
+                onkeydown="if(event.key === 'Enter') sendMessage()">
+            <button id="send-btn" onclick="sendMessage()" title="Send Message">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+
+        <div class="helpline-banner">
+            <div>
+                <i class="fas fa-headset"></i> 
+                <strong>Admissions Hotline:</strong> +91 74066 44449 / +91 97317 97677
+            </div>
+            <div>
+                <i class="fab fa-whatsapp"></i> 
+                <strong>WhatsApp Support:</strong> +91 97317 79233
+            </div>
+            <div>
+                <i class="fas fa-envelope"></i> admissions@acharya.ac.in
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>

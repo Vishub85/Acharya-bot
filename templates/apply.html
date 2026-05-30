@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acharya Admissions Application</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body class="light-theme">
+    <div class="chat-wrapper" style="max-width: 760px; margin: 40px auto;">
+        <header>
+            <div class="logo-container">
+                <img src="/static/acharya_logo.png" alt="Acharya Institutes" class="header-logo" onerror="this.onerror=null;this.src='/static/acharya_logo.svg'">
+                <h2>Admissions Application</h2>
+            </div>
+        </header>
+
+        <div id="chat-box" style="padding: 30px; background: var(--chat-wrapper-bg);">
+            {% if success %}
+                <div class="message bot">
+                    Thank you, {{ name }}! Your admission details have been submitted. The admissions team will contact you soon.
+                </div>
+            {% else %}
+                <div class="message bot">
+                    Please share your full name, 12th education details, and contact information so our admissions team can follow up.
+                </div>
+                {% if error %}
+                    <div class="message bot" style="background: #f8d7da; color: #842029;">
+                        {{ error }}
+                    </div>
+                {% endif %}
+            {% endif %}
+
+            <form action="/apply" method="post" style="display: grid; gap: 18px; margin-top: 20px;">
+                <label>
+                    Full Name
+                    <input type="text" name="name" value="{{ name|default('') }}" placeholder="Enter your full name" required>
+                </label>
+
+                <label>
+                    12th Education Details
+                    <textarea name="education" rows="5" placeholder="School/Board, year, stream, marks/percentage" required>{{ education|default('') }}</textarea>
+                </label>
+
+                <label>
+                    Contact Info
+                    <input type="text" name="contact" value="{{ contact|default('') }}" placeholder="Phone number or email" required>
+                </label>
+
+                <button type="submit" style="width: fit-content; padding: 12px 24px; border-radius: 999px; border: none; background: var(--primary-blue); color: #fff; font-weight: 600; cursor: pointer;">
+                    Submit Details
+                </button>
+            </form>
+
+            <div style="margin-top: 24px; font-size: 0.95rem; color: var(--text-muted);">
+                <a href="/" style="color: var(--primary-blue); text-decoration: underline;">Back to Chatbot</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

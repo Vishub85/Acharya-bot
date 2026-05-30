@@ -1,0 +1,35 @@
+{
+  "location": "Bengaluru, Karnataka",
+
+  "fees": {
+    "BE_BTech": "₹1.5L - ₹4L per year"
+  },
+
+  "hostel_fees": {
+    "summary": "Hostel rooms are available in AC and non-AC formats with 1-share and 2-share options.",
+    "non_ac_1_share": "₹90K - ₹1.0L per year",
+    "non_ac_2_share": "₹85K - ₹95K per year",
+    "ac_1_share": "₹1.3L - ₹1.5L per year",
+    "ac_2_share": "₹1.2L - ₹1.4L per year"
+  },
+
+  "placements": {
+    "companies": 550
+  },
+
+  "courses": {
+    "engineering": [
+      "CSE",
+      "AI & ML",
+      "Data Science",
+      "ECE",
+      "ISE",
+      "Mechanical",
+      "Civil"
+    ]
+  },
+
+  "contact": {
+    "admissions_phone": "+91 74066 44449"
+  }
+}
